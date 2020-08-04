@@ -1,19 +1,29 @@
 from Tkinter import *
 import webbrowser
 import os
-from googlesearch import *
+#from googlesearch import *
 
 root = Tk()
 root.title("Menu")
-root.geometry('745x120')
+#root.geometry('745x120')
 root.resizable(width=0, height=0)
 #def search():
 #	query = wyszukaj.get()
 #	webbrowser.get('firefox').open('https://google.com/search?q=%s' % query)
+def center_window(width=745, height=120):
+    # get screen width and height
+    	screen_width = root.winfo_screenwidth()
+    	screen_height = root.winfo_screenheight()
+
+    # calculate position x and y coordinates
+    	x = (screen_width/2) - (width/2)
+   	y = (screen_height/2) - (height/2)
+    	root.geometry('%dx%d+%d+%d' % (width, height, x, y))
+center_window(745, 120)
 def weather():
 	webbrowser.open('https://www.twojapogoda.pl/')
 def info():
-	webbrowser.open('https://echodnia.eu/swietorzyskie/wiadomosci/wloszczowa/')
+	webbrowser.open('https://echodnia.eu/swietokrzyskie/wiadomosci/wloszczowa/')
 def wylacz():
 	os.system("shutdown now")
 def inter():
